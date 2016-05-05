@@ -11,7 +11,7 @@
 /*
  *  Change this to a bigger number
  */
-const int microphone_trigger_volume = 200;
+const int microphone_trigger_volume = 100;
 
 /**
  *  These correspond to the pins that the sensors are plugged 
@@ -66,13 +66,26 @@ void setup() {
  *  This is run over and over forever
  */
 void loop() {
-  // if the buzzer is off, should we turn it on (because it's loud)
+  // if the buzzer is off, should we turn it on (because it's loud and stays loud)
   if (!buzzer_should_be_on) {
     int microphone_value = analogRead(microphone_pin);
     if (microphone_value > microphone_trigger_volume) {
-      Serial.print("turning ON buzzer, volume is: ");
-      Serial.println(microphone_value);
-      buzzer_should_be_on = true;
+      Serial.print("getting angry, volume is: ");
+      Serial.print(microphone_value);
+      Serial.print("... ");
+
+      // wait half a second, then still see if it's loud
+      delay(500);
+      
+      microphone_value = analogRead(microphone_pin);
+      if (microphone_value > microphone_trigger_volume) {
+        Serial.print("turning ON buzzer, volume is: ");
+        Serial.println(microphone_value);
+        buzzer_should_be_on = true;
+      } else {
+        Serial.print("it's OK, it didn't stay loud, value was: ");
+        Serial.println(microphone_value);
+      }
     }
   }
 
