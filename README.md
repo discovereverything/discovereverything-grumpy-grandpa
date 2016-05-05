@@ -11,3 +11,12 @@ Arduino.
 You can buy mCookie and Microduino products in Canada from
 our [Discover Everything website](http://discovereverything.ca/).
 
+<img src="https://wiki.microduino.cc/images/c/c8/Grumpy_Grandpa_module.jpg" />
+<br />
+<img src="https://wiki.microduino.cc/images/d/de/CoreUSB_Sensorhub_Applause_heat.jpg" />
+<br />
+<img src="https://wiki.microduino.cc/images/0/01/Applause_heat_all.jpg" />
+<br />
+<img src="https://wiki.microduino.cc/images/c/c1/Grumpy_Grandpa.jpg" />
+<br />
+
